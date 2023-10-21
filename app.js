@@ -49,13 +49,17 @@ let numberToPass = "";
 numbers.forEach(number => {
   number.addEventListener('click', () => {
     numberToPass += number.textContent;
-    console.log(numberToPass);
+    
+    if (display.textContent = "0") {
+      display.textContent = numberToPass;
+    } else {
+      display.textContent += numberToPass;
+    }
   });
 });
 
 operators.forEach(op => {
   op.addEventListener('click', (e) => {
-    console.log(numberToPass);
     display.textContent = numberToPass;
     displayValue = display.textContent;
     numberToPass = "";
@@ -65,7 +69,6 @@ operators.forEach(op => {
     if (!localStorage.getItem("firstNumber")) {
       localStorage.setItem("firstNumber", displayValue); 
       firstNumber = localStorage.getItem("firstNumber");
-      console.log("first: " + firstNumber);
     }
   });
 });
@@ -78,7 +81,6 @@ equals.addEventListener("click", () => {
   if (localStorage.getItem("firstNumber")) {
     localStorage.setItem("secondNumber", displayValue);
     secondNumber = localStorage.getItem("secondNumber");
-    console.log("second: " + secondNumber);
   }
 
   firstNumber = + firstNumber;
@@ -88,5 +90,5 @@ equals.addEventListener("click", () => {
 
 ac.addEventListener('click', () => {
   localStorage.clear();
-  display.textContent = "DISPLAY";
+  display.textContent = "0";
 });
