@@ -42,6 +42,7 @@ const ac = document.querySelector('#ac');
 const numbers = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equals = document.querySelector('#equals');
+const float = document.querySelector('#float');
 
 let displayValue;
 let numberToPass = "";
@@ -58,6 +59,10 @@ numbers.forEach(number => {
   });
 });
 
+float.addEventListener('click', () => {
+  numberToPass += ".";
+});
+
 operators.forEach(op => {
   op.addEventListener('click', (e) => {
     display.textContent = numberToPass;
@@ -66,11 +71,11 @@ operators.forEach(op => {
     
     if (!localStorage.getItem("firstNumber")) {
       localStorage.setItem("firstNumber", displayValue); 
-      firstNumber = + localStorage.getItem("firstNumber");
+      firstNumber = parseFloat(localStorage.getItem("firstNumber"));
     } else {
       localStorage.setItem("secondNumber", displayValue);
-      secondNumber = + localStorage.getItem("secondNumber");
-      firstNumber = + localStorage.getItem("firstNumber");
+      secondNumber = parseFloat(localStorage.getItem("secondNumber"));
+      firstNumber = parseFloat(localStorage.getItem("firstNumber"));
 
       display.textContent = operate(firstNumber, operator, secondNumber);
       localStorage.setItem("firstNumber", display.textContent);
@@ -88,8 +93,8 @@ equals.addEventListener("click", () => {
   localStorage.setItem("secondNumber", displayValue);
   secondNumber = localStorage.getItem("secondNumber");
 
-  firstNumber = + localStorage.getItem("firstNumber");
-  secondNumber = + secondNumber;
+  firstNumber = parseFloat(localStorage.getItem("firstNumber"));
+  secondNumber = parseFloat(secondNumber);
   display.textContent = operate(firstNumber, operator, secondNumber);
   localStorage.clear();
 });
