@@ -64,26 +64,32 @@ operators.forEach(op => {
     displayValue = display.textContent;
     numberToPass = "";
     
-    operator = e.target.textContent;
-
     if (!localStorage.getItem("firstNumber")) {
       localStorage.setItem("firstNumber", displayValue); 
-      firstNumber = localStorage.getItem("firstNumber");
+      firstNumber = + localStorage.getItem("firstNumber");
+    } else {
+      localStorage.setItem("secondNumber", displayValue);
+      secondNumber = localStorage.getItem("secondNumber");
+    
+      firstNumber = + firstNumber;
+      secondNumber = + secondNumber;
+      display.textContent = operate(firstNumber, operator, secondNumber);
+      localStorage.setItem("firstNumber", display.textContent);
+      localStorage.removeItem("secondNumber");
     }
+
+    operator = e.target.textContent;
   });
 });
 
 equals.addEventListener("click", () => {
-  display.textContent = numberToPass;
   displayValue = display.textContent;
   numberToPass = "";
 
-  if (localStorage.getItem("firstNumber")) {
-    localStorage.setItem("secondNumber", displayValue);
-    secondNumber = localStorage.getItem("secondNumber");
-  }
+  localStorage.setItem("secondNumber", displayValue);
+  secondNumber = localStorage.getItem("secondNumber");
 
-  firstNumber = + firstNumber;
+  firstNumber = + localStorage.getItem("firstNumber");
   secondNumber = + secondNumber;
   display.textContent = operate(firstNumber, operator, secondNumber);
 });
