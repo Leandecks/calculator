@@ -1,4 +1,98 @@
-#numbers, #operators {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+html,
+body,
+#content {
+  height: 100%;
+}
+
+body {
+  background-color: #2b2d42;
+  color: #ffd166;
+  font-family: "Roboto Slab", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  background: rgb(63,94,251);
+  background: linear-gradient(168deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); 
+  padding: .5rem;
+  color: white;
+}
+
+#content {
   display: flex;
-  gap: .5rem
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#dispac {
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+}
+
+#display {
+  border: solid #ffd166;
+  width: 15.1rem;
+  padding: 1rem;
+  text-align: end;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-weight: 700;
+}
+
+#numbers,
+#calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+#zero {
+  align-self: flex-end;
+}
+
+#zerobtns {
+ display: flex;
+ gap: .5rem; 
+}
+
+#nrop,
+#dispac {
+  display: flex;
+  gap: .5rem;
+}
+
+#numbers .nr-line-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+#operators {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+button {
+  width: 5.5rem;
+  height: 5.5rem;
+  background-color: #ffd166;
+  border: 0;
+  font-size: 3rem;
+  color: #2b2d42;
+  font-family: "Roboto Slab", sans-serif;
+  padding: .5rem;
+}
+
+footer {
+  font-weight: bold;
 }

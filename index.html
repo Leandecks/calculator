@@ -9,37 +9,58 @@
 <body>
 
   <!--
-    DISPLAY
+    0 [0] AC
     123 + -
     456 * / 
-    789  = 
+    789 . = 
   -->
-
-  <div id="calculator">
-    <div id="display">0</div>
-    <button type="button" id="ac">AC</button>
-    <div id="numbers">
-      <button type="button" class="number">0</button>
-      <button type="button" class="number">1</button>
-      <button type="button" class="number">2</button>
-      <button type="button" class="number">3</button>
-      <button type="button" class="number">4</button>
-      <button type="button" class="number">5</button>
-      <button type="button" class="number">6</button>
-      <button type="button" class="number">7</button>
-      <button type="button" class="number">8</button>
-      <button type="button" class="number">9</button>
+  <div id="content">
+    <h1>Calculator</h1>
+    <div id="calculator">
+      <div id="dispac">
+        <button type="button" id="ac">AC</button>
+        <div id="display">0</div>
+      </div>
+      <div id="nrop">
+        <div id="numbers">
+          <div class="nr-line-wrapper">
+            <button type="button" class="number">1</button>
+            <button type="button" class="number">2</button>
+            <button type="button" class="number">3</button>
+          </div>
+          <div class="nr-line-wrapper">
+            <button type="button" class="number">4</button>
+            <button type="button" class="number">5</button>
+            <button type="button" class="number">6</button>
+          </div>
+          <div class="nr-line-wrapper">
+            <button type="button" class="number">7</button>
+            <button type="button" class="number">8</button>
+            <button type="button" class="number">9</button>
+          </div>
+          <div id="zerobtns">
+            <button type="button" id="float">.</button>
+            <button type="button" id="equals">=</button>
+            <button type="button" class="number" id="zero">0</button>
+          </div>
+        </div>
+        <div id="opbtn">
+          <div id="operators">
+            <button type="button" class="operator">+</button>
+            <button type="button" class="operator">-</button>
+            <button type="button" class="operator">*</button>
+            <button type="button" class="operator">/</button>
+          </div>
+          
+          <!-- <button type="button" id="float">.</button>
+          <button type="button" id="equals">=</button> -->
+        </div>
+      </div>
     </div>
-    <div id="operators">
-      <button type="button" class="operator">+</button>
-      <button type="button" class="operator">-</button>
-      <button type="button" class="operator">*</button>
-      <button type="button" class="operator">/</button>
-    </div>
-    <button type="button" id="float">.</button>
-    <button type="button" id="equals">=</button>
+    <footer>
+      <p>Developed by Leandecks - Source Code</p>
+    </footer>
   </div>
-
   
   <script src="./app.js"></script>
 </body>
