@@ -69,13 +69,12 @@ operators.forEach(op => {
       firstNumber = + localStorage.getItem("firstNumber");
     } else {
       localStorage.setItem("secondNumber", displayValue);
-      secondNumber = localStorage.getItem("secondNumber");
-    
-      firstNumber = + firstNumber;
-      secondNumber = + secondNumber;
+      secondNumber = + localStorage.getItem("secondNumber");
+      firstNumber = + localStorage.getItem("firstNumber");
+
       display.textContent = operate(firstNumber, operator, secondNumber);
       localStorage.setItem("firstNumber", display.textContent);
-      localStorage.removeItem("secondNumber");
+      localStorage.clear;
     }
 
     operator = e.target.textContent;
@@ -92,6 +91,7 @@ equals.addEventListener("click", () => {
   firstNumber = + localStorage.getItem("firstNumber");
   secondNumber = + secondNumber;
   display.textContent = operate(firstNumber, operator, secondNumber);
+  localStorage.clear();
 });
 
 ac.addEventListener('click', () => {
