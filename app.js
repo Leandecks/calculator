@@ -82,7 +82,15 @@ operators.forEach(op => {
       localStorage.clear;
     }
 
-    operator = e.target.textContent;
+    if (e.target.textContent === "−") {
+      operator = "-";
+    } else if (e.target.textContent === "✕") {
+      operator = "*";
+    } else if (e.target.textContent === "÷") {
+      operator = "/";
+    } else if (e.target.textContent === "+") {
+      operator = "+";
+    }
   });
 });
 
